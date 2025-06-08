@@ -1,0 +1,17 @@
+@use '@styles/_variables.scss' as variables;
+
+.input {
+  padding: 10px;
+  border: 1px solid variables.$light-gray-color;
+  border-radius: 100px;
+  background-color: variables.$secondary-color;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input-error {
+  border-color: variables.$red-color;
+}

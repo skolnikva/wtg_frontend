@@ -1,0 +1,29 @@
+@import 'leaflet/dist/leaflet.css';
+
+.leaflet-container,
+.leaflet-touch,
+.leaflet-fade-anim,
+.leaflet-grab,
+.leaflet-touch-drag,
+.leaflet-touch-zoom{
+  width: 100%;
+  height: 100% !important;
+  font-family: "Montserrat", sans-serif;
+}
+
+.leaflet-control-attribution {
+  display: none !important;
+}
+
+.leaflet-popup-content-wrapper {
+  background-color: #EFF7E8 !important;
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+  top: 5px;
+  right: 5px;
+}
+
+.leaflet-top {
+  z-index: 500;
+}

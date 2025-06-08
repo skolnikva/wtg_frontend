@@ -1,0 +1,48 @@
+.form {
+  display: flex;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.inputWrapper {
+  position: relative;
+  flex: 1;
+  margin: 0 5px;
+
+  input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 12px 40px 12px 50px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    font-size: 1rem;
+    background-color: #DBE3D6;
+  }
+
+  .searchIcon {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+  }
+
+  .resetButton {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    img {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}

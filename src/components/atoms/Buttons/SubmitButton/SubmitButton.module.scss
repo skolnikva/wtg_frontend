@@ -1,0 +1,21 @@
+@use '@styles/_variables.scss' as variables;
+
+.submitButton {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  background-color: variables.$yellow-color;
+  color: variables.$primary-color;
+  padding: 10px;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s, color 0.3s;
+
+  &:hover {
+    background-color: variables.$primary-color;
+    color: variables.$secondary-color;
+  }
+}

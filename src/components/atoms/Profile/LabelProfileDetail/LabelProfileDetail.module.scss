@@ -1,0 +1,23 @@
+.label {
+  color: #0c2926;
+  font-weight: 600;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  flex: 1 1 auto;
+  max-width: fit-content;
+  gap: 5px;
+}
+
+.label b {
+  color: #0c2926;
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.description {
+  color: #0c2926;
+  font-weight: 600;
+  font-size: 13px;
+}

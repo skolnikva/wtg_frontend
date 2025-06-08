@@ -1,0 +1,10 @@
+@use '@styles/_variables.scss' as variables;
+
+.label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-weight: 400;
+  color: variables.$light-gray-color;
+  margin-left: 12px;
+  display: block;
+}

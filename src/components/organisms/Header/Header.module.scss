@@ -1,0 +1,42 @@
+@use '@styles/_variables.scss' as variables;
+
+.headerWrapper {
+  position: sticky;
+  top: 0;
+  padding-top: 20px;
+  z-index: 1000;
+}
+
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  background-color: variables.$header-background;
+  color: variables.$header-text-color;
+  padding: 0 20px;
+  border-radius: 25px;
+  box-shadow: 0 4px 10px 0 rgba(12, 41, 38, 0.6);
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.headerCenter {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+  padding-right: 5px;
+}

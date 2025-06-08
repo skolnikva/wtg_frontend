@@ -1,0 +1,6 @@
+@use '@styles/_variables.scss' as variables;
+
+.errorText {
+  color: variables.$red-color;
+  margin-top: 5px;
+}

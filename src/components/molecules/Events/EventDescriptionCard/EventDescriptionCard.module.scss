@@ -1,0 +1,30 @@
+.card {
+  border: 1px solid #9c9c9c;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.header {
+  border-bottom: 1px solid #9c9c9c;
+  padding: 10px 20px;
+  border-radius: 16px 16px 0 0;
+}
+
+.body {
+  padding: 15px 20px;
+  flex-grow: 1;
+}
+
+.footer {
+  padding: 10px 20px;
+}
+
+.sourceLink {
+  color: inherit;
+  &:hover {
+    color: #0c2926;
+  }
+}

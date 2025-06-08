@@ -1,0 +1,61 @@
+@use '@styles/_variables.scss' as variables;
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.labelContainer {
+  display: flex;
+}
+
+.hintContainer {
+  position: relative;
+  margin-left: 6px;
+}
+
+.hintButton {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.infoIcon {
+  width: 14px;
+  height: 14px;
+  opacity: 0.6;
+  
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.hint {
+  position: absolute;
+  top: 60%;
+  left: 20px;
+  background: variables.$secondary-color;
+  border: 1px solid variables.$light-gray-color;
+  padding: 6px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  // min-width: 100px;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  // white-space: nowrap;
+}
+
+.error {
+  color: variables.$red-color;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.input-error {
+  border-color: variables.$red-color !important;
+}

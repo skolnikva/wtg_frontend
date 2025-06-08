@@ -1,0 +1,91 @@
+.container {
+  display: flex;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.eventsPanel {
+  width: 350px;
+  height: 78vh;
+  overflow-y: auto;
+  padding-left: 20px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding-left: 0;
+    height: auto;
+  }
+}
+
+.mapContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 78vh;
+
+  @media (max-width: 768px) {
+    height: 75vh;
+    flex: 0 0 auto;
+  }
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.selectedEvent {
+}
+
+.onBackToList {
+  margin-top: 15px;
+  cursor: pointer;
+  transition: all 0.2s;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+}
+
+.popupContent {
+  min-width: 250px;
+  max-width: 300px;
+
+  @media (max-width: 768px) {
+    min-width: 180px;
+    max-width: 220px;
+  }
+}
+
+.popupItem {
+  h3 {
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid #DBE3D6;
+    margin: 8px 0;
+  }
+
+  &:last-child hr {
+    display: none;
+  }
+}
+
+.noEventsMessage {
+  @media (max-width: 768px) {
+    padding-top: 10px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,44 @@
+@use '@styles/_variables.scss' as variables;
+
+.edit-profile-form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  // gap: 10px;
+  // width: 50%;
+  // min-width: 200px;
+  width: 250px;
+}
+
+.dateField {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.dateInputStyle {
+  -webkit-appearance: none;
+  padding: 10px;
+  padding-right: 30px;
+  border: 1px solid variables.$light-gray-color;
+  border-radius: 100px;
+  background-color: variables.$secondary-color;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
+  flex-grow: 1;
+}
+
+.lastFormField {
+  margin-bottom: 15px;
+}
+
+input.flatpickr-input {
+  appearance: none;
+  -webkit-appearance: none;
+}

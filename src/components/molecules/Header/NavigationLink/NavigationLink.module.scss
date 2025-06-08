@@ -1,0 +1,48 @@
+.link {
+  display: flex;
+  align-items: center;
+  padding-right: 5px;
+  gap: 15px;
+
+  a {
+    display: flex;
+    align-items: center;
+  }
+
+  img {
+    width: 25px;
+    height: auto;
+
+    &.profile-icon {
+      padding: 0;
+    }
+  }
+}
+
+.tooltipWrapper {
+  position: relative;
+  display: inline-block;
+
+  &:hover .tooltipText {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}
+
+.tooltipText {
+  position: absolute;
+  bottom: calc(-100% - 4px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #EFF7E8;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 10;
+}

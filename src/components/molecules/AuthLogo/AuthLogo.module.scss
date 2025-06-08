@@ -1,0 +1,48 @@
+@use '@styles/_variables.scss' as variables;
+
+.modalLogo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: variables.$secondary-color;
+  padding: 20px;
+  border-radius: 0 25px 25px 0;
+  width: 400px;
+  height: 500px;
+  position: relative;
+}
+
+.modalLogo.reg {
+  border-radius: 25px 0 0 25px;
+}
+
+.modalInLogo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: variables.$primary-color;
+  border-radius: 15px;
+  width: 90%;
+  height: 90%;
+}
+
+.modalInLogo img {
+  width: 150px;
+  padding-bottom: 30px;
+}
+
+.modalInLogo h1 {
+  color: variables.$secondary-color;
+  font-size: 35px;
+}
+
+@media (max-width: 768px) {
+  .modalLogo {
+    display: none;
+  }
+  .modalLogo.reg {
+    display: none;
+  }
+}

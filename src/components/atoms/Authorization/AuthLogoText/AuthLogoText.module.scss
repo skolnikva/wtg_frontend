@@ -1,0 +1,6 @@
+@use '@styles/_variables.scss' as variables;
+
+.logoText {
+  font-size: 35px;
+  color: variables.$secondary-color;
+}

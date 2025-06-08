@@ -1,0 +1,15 @@
+.comfortaaText {
+  font-family: "Comfortaa", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}

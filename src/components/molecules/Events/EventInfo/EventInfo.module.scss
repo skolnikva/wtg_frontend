@@ -1,0 +1,31 @@
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+  display: block;
+  margin: 5px 0;
+}
+
+.locationLink {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  max-width: 100%;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  font-size: 13px;
+  color: #9C9C9C;
+  font-weight: 500;
+
+  &:hover,
+  &:focus-visible {
+    color: #0c2926;
+  }
+}

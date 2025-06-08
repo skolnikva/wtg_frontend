@@ -1,0 +1,79 @@
+@use './_variables.scss' as variables;
+@use './flatpickr-custom.scss';
+@use './map-custom.scss';
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: grid;
+  background-color: variables.$secondary-color;
+  color: variables.$primary-color;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  min-height: 100%;
+  grid-template-rows: auto 1fr auto;
+  -webkit-text-size-adjust: 100%;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 95vh;
+  padding: 15px;
+  overflow: hidden;
+}
+
+.comfortaa-text {
+  font-family: "Comfortaa", sans-serif;
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid var(--primary-color);
+}
+
+textarea:focus {
+  outline: none;
+  border: 1px solid var(--primary-color);
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  background-clip: padding-box;
+}

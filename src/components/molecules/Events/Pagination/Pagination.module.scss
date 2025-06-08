@@ -1,0 +1,36 @@
+.loadMoreContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 16px;
+  overflow: hidden;
+}
+
+.paginationButton{
+  transition: transform 0.1s ease, filter 0.1s ease;
+  
+  &:disabled {
+    cursor: default;
+    filter: grayscale(80%);
+  }
+
+  &:active {
+    transform: scale(0.9);
+    filter: brightness(0.85);
+  }
+
+  img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.left {
+  transform: rotate(180deg);
+}
+
+
+.pageInfo {
+  font-weight: 500;
+}

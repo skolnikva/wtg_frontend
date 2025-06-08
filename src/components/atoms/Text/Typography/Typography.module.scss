@@ -1,0 +1,68 @@
+.h1 {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.h3 {
+  font-size: 15px;
+  
+  &.thin {
+    font-weight: 400;
+  }
+  
+  &.bold {
+    font-weight: 600;
+  }
+}
+
+.h4 {
+  font-size: 13px;
+  
+  &.gray {
+    font-weight: 500;
+    color: #9C9C9C;
+  }
+  
+  &.bold {
+    font-weight: 600;
+  }
+  
+  &.thin {
+    font-weight: 400;
+  }
+}
+
+.h4 b{
+  font-weight: 600;
+}
+
+.body {
+  font-size: 12px;
+  color: #0c2926;
+}
+
+.body1 {
+  font-size: 1rem;
+}
+
+.body2 {
+  font-size: 0.875rem;
+}
+
+.caption {
+  font-size: 0.75rem;
+  color: #666;
+}
+
+.error {
+  color: #C10E0E;
+  display: block;
+  margin-top: 5px;
+  margin-left: 12px;
+  font-size: 0.875rem;
+}

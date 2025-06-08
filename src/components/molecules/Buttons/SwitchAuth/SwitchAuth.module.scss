@@ -1,0 +1,16 @@
+@use '@styles/_variables.scss' as variables;
+
+.switchContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 15px;
+  padding-top: 10px;
+}
+
+.switchContainer h6 {
+  color: variables.$light-gray-color;
+  font-weight: 400;
+  font-size: 11px;
+  padding-right: 10px;
+}

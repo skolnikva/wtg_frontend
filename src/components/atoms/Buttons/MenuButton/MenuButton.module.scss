@@ -1,0 +1,16 @@
+@use '@styles/_variables.scss' as variables;
+
+.button {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  white-space: nowrap;
+}
+
+.button:hover {
+  background-color: variables.$hover-gray-color;
+}

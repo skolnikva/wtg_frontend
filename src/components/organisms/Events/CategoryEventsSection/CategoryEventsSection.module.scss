@@ -1,0 +1,97 @@
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0 20px;
+}
+
+.categoryLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  color: #222;
+  font-weight: 600;
+  text-decoration: none;
+  user-select: none;
+  transition: color 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    outline: none;
+  }
+
+  &:active {
+
+  }
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.grid {
+  display: grid;
+  gap: 18px;
+  justify-content: start;
+  grid-template-columns: repeat(auto-fill, minmax(308px, 1fr));
+  margin: 0;
+}
+
+.arrowButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.1s ease, filter 0.1s ease;
+  -webkit-tap-highlight-color: transparent;
+
+  &:disabled {
+    cursor: default;
+    filter: grayscale(80%);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  &:active {
+    transform: scale(0.9);
+    filter: brightness(0.85);
+    background: none;
+    box-shadow: none;
+  }
+
+  img {
+    width: 30px;
+    height: 30px;
+    pointer-events: none;
+    border-radius: 50%;
+  }
+}
+
+.rightArrow {
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+  transition: transform 0.2s ease, filter 0.2s ease;
+
+  .categoryLink:hover &,
+  .categoryLink:focus-visible & {
+    transform: translateX(4px);
+    filter: brightness(1.2);
+  }
+}
+
+.leftArrow {
+  transform: rotate(180deg);
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .arrowButton:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}

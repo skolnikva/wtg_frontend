@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+  padding-right: 5px;
+  gap: 15px;
+
+  a {
+    display: flex;
+    align-items: center;
+  }
+
+  img {
+    width: 25px;
+    height: auto;
+
+    &.profile-icon {
+      padding: 0;
+    }
+  }
+}
