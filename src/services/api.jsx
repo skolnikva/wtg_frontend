@@ -1,8 +1,6 @@
 import axios from 'axios';
 import Cookies from 'js-cookie';
 
-// const API_URL = 'http://192.168.208.1:8000';
-// const API_URL = 'http://172.20.10.4:8000';
 const API_URL = 'http://192.168.2.56:8000';
 
 const apiClient = axios.create({
