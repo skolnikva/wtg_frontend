@@ -1,7 +1,7 @@
 import axios from 'axios';
 import Cookies from 'js-cookie';
 
-const API_URL = 'http://192.168.2.56:8000';
+const API_URL = '/api/';
 
 const apiClient = axios.create({
   baseURL: API_URL,
@@ -54,7 +54,7 @@ const api = {
 
   getFullMediaUrl(path) {
     if (!path) return null;
-    return `${API_URL}${path.startsWith('/') ? '' : '/'}${path}`;
+    return `${path.startsWith('/') ? '' : '/'}${path}`;
   },
 
   // ======================
