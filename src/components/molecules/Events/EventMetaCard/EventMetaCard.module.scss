@@ -1,10 +1,12 @@
+@use '@styles/_variables.scss' as variables;
+
 .card {
-  border: 1px solid #9c9c9c;
+  border: 1px solid variables.$light-gray-color;
   border-radius: 16px;
 }
 
 .header {
-  border-bottom: 1px solid #9c9c9c;
+  border-bottom: 1px solid variables.$light-gray-color;
   padding: 10px 20px;
   border-radius: 16px 16px 0 0;
 }
@@ -21,5 +23,5 @@
   padding: 0 0 0 7px;
   width: 90px;
   text-align: left;
-  border-left: 1px solid #9c9c9c;
+  border-left: 1px solid variables.$light-gray-color;
 }

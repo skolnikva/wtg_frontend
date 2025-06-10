@@ -14,8 +14,6 @@ const EventCard = ({ event }) => {
   const { showNotification } = useNotification();
   const { favorites, addToFavorites, removeFromFavorites } = useContext(FavoritesContext);
   const isPastEvent = new Date(event.closest_date) < new Date();
-  console.log(new Date(event.closest_data).valueOf());
-  console.log(new Date().valueOf());
   const isFavorite = favorites.some(fav => fav.id === event.id);
 
   const handleCardClick = () => {

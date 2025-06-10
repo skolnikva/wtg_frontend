@@ -12,7 +12,7 @@ const Input = ({
   error,
   ...rest
 }) => {
-  const inputClass = `${styles.input} ${error ? styles['input-error'] : ''} ${className || ''}`;
+  const inputClass = `${styles.input} ${error ? styles['inputError'] : ''} ${className || ''}`;
 
   return (
     <input

@@ -1,3 +1,5 @@
+@use '@styles/_variables.scss' as variables;
+
 .dotsWrapper {
   display: flex;
   justify-content: center;
@@ -10,7 +12,7 @@
 .dot {
   width: 8px;
   height: 8px;
-  background-color: #0C2926;
+  background-color: variables.$primary-color;
   border-radius: 50%;
   animation: bounce 0.6s infinite alternate;
 }

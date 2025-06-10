@@ -1,3 +1,5 @@
+@use '@styles/_variables.scss' as variables;
+
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -5,7 +7,7 @@
 }
 
 .tag {
-  background-color: #DBE3D6;
+  background-color: variables.$hover-gray-color;
   padding: 5px 10px;
   border-radius: 10px;
 }

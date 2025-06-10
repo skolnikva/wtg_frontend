@@ -1,3 +1,5 @@
+@use '@styles/_variables.scss' as variables;
+
 .form {
   display: flex;
   align-items: center;
@@ -15,10 +17,10 @@
     box-sizing: border-box;
     width: 100%;
     padding: 12px 40px 12px 50px;
-    border: 1px solid #ccc;
+    border: 1px solid variables.$light-gray-color;
     border-radius: 15px;
     font-size: 1rem;
-    background-color: #DBE3D6;
+    background-color: variables.$hover-gray-color;
   }
 
   .searchIcon {

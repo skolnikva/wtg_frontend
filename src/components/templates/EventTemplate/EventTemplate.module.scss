@@ -55,22 +55,10 @@
 
   .image {
     max-width: 100%;
-    // height: 300px;
     aspect-ratio: unset;
   }
 
   .details {
     width: 100%; 
-  }
-}
-
-@media (max-width: 480px) {
-  .image {
-    // height: 250px;
-    // border-radius: 12px;
-  }
-
-  .details {
-    // width: 89vw;
   }
 }

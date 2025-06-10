@@ -1,3 +1,5 @@
+@use '@styles/_variables.scss' as variables;
+
 .info {
   display: flex;
   flex-direction: column;
@@ -21,11 +23,11 @@
   cursor: pointer;
   transition: color 0.3s ease;
   font-size: 13px;
-  color: #9C9C9C;
+  color: variables.$light-gray-color;
   font-weight: 500;
 
   &:hover,
   &:focus-visible {
-    color: #0c2926;
+    color: variables.$primary-color;
   }
 }

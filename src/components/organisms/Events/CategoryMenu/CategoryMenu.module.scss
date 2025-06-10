@@ -1,3 +1,6 @@
+@use '@styles/_variables.scss' as variables;
+@use '@styles/mixins.scss' as scroll;
+
 .wrapper {
   display: flex;
   align-items: center;
@@ -38,59 +41,21 @@
 }
 
 .scrollContainer {
-  display: flex;
-  align-items: center;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.arrowLeft,
-.arrowRight {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 30px;
-  display: flex;
-  align-items: center;
-  z-index: 1;
-  cursor: pointer;
+  @include scroll.scrollContainer;
 }
 
 .arrowLeft {
-  left: 0;
-  background: linear-gradient(
-    to right,
-    #EFF7E8 0%,
-    #EFF7E8 64%,
-    rgba(239, 247, 232, 0) 100%
-  );
-  justify-content: flex-start;
-
-  img {
-    transform: rotate(180deg);
-  }
+  @include scroll.scrollArrow('left');
 }
 
 .arrowRight {
-  right: 0;
-  background: linear-gradient(
-    to left,
-    #EFF7E8 0%,
-    #EFF7E8 64%,
-    rgba(239, 247, 232, 0) 100%
-  );
-  justify-content: flex-end;
+  @include scroll.scrollArrow('right');
 }
 
 .arrowImg {
-  width: 15px;
-  height: 15px;
-  position: relative;
-  z-index: 2;
+  @include scroll.arrowImage;
+}
+
+.arrowLeft .arrowImg {
+  transform: rotate(180deg);
 }

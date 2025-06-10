@@ -1,9 +1,11 @@
+@use '@styles/_variables.scss' as variables;
+
 .container {
   width: 100%;
 }
 
 .card {
-  border: 1px solid #9c9c9c;
+  border: 1px solid variables.$light-gray-color;
   border-radius: 16px;
 }
 
@@ -12,7 +14,7 @@
 }
 
 .title {
-  border-bottom: 1px solid #9c9c9c;
+  border-bottom: 1px solid variables.$light-gray-color;
   padding: 10px 20px;
   border-radius: 16px 16px 0 0;
 }

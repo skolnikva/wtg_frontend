@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import NotFoundTemplate from '@templates/NotFoundTemplate/NotFoundTemplate';
 import api from '@services/api';
+import DotsLoader  from '@molecules/DotsLoader/DotsLoader.jsx';
 
 const NotFoundPage = ({ isServerError = false }) => {
   const navigate = useNavigate();
@@ -33,9 +34,7 @@ const NotFoundPage = ({ isServerError = false }) => {
 
   const handleGoBack = isServerError ? () => {} : () => navigate(-1);
 
-  if (isLoading) {
-    return null;
-  }
+  if (isLoading) return <DotsLoader />;
 
   return (
     <NotFoundTemplate

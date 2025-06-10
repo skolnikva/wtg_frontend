@@ -8,6 +8,7 @@ import ProfileImageUpload from '@molecules/Profile/ProfileImageUpload/ProfileIma
 import profilePhoto from '@assets/img/default_profile.png';
 import useAuthCheck from '@hooks/useAuthCheck';
 import { useNotification } from '@contexts/NotificationContext';
+import DotsLoader  from '@molecules/DotsLoader/DotsLoader.jsx';
 
 const ProfileEditPage = () => {
   useAuthCheck();
@@ -60,7 +61,7 @@ const ProfileEditPage = () => {
   }, [navigate, showNotification]);
 
   if (!userData || !avatarUrl) {
-    return <div>Загрузка...</div>;
+    return <DotsLoader/>;
   }
 
   const handleChange = (e) => {
@@ -142,7 +143,7 @@ const ProfileEditPage = () => {
       }
   
       showNotification('success', 'Профиль успешно обновлен!');
-      setTimeout(() => navigate('/profile'), 2000);
+      navigate('/profile');
   
     } catch (error) {
       console.error('Ошибка обновления данных профиля:', error);

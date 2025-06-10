@@ -21,7 +21,7 @@ const LabeledInput = ({
   const [showHint, setShowHint] = useState(false);
 
   return (
-    <div className={styles['form-group']}>
+    <div className={styles.formGroup}>
       <div className={styles.labelContainer}>
         <Label htmlFor={name}>{label}{required && '*'}</Label>
         {hint && (
@@ -46,7 +46,7 @@ const LabeledInput = ({
           name={name}
           value={value}
           onChange={onChange}
-          className={error ? styles['input-error'] : ''}
+          className={error ? styles['inputError'] : ''}
           required={required}
           title={''}
           {...rest}

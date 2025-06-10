@@ -1,6 +1,6 @@
 @use '@styles/_variables.scss' as variables;
 
-.form-group {
+.formGroup {
   display: flex;
   flex-direction: column;
   margin-bottom: 15px;
@@ -56,6 +56,6 @@
   margin-top: 4px;
 }
 
-.input-error {
+.inputError {
   border-color: variables.$red-color !important;
 }

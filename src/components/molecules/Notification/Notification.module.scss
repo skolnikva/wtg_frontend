@@ -1,8 +1,10 @@
+@use '@styles/_variables.scss' as variables;
+
 .notification {
   right: 20px;
   padding: 15px 20px;
-  background-color: #E2F397;
-  color: #0C2926;
+  background-color: variables.$yellow-color;
+  color: variables.$primary-color;
   border-radius: 15px;
   z-index: 9999;
   display: flex;
@@ -27,17 +29,17 @@
 }
 
 .success {
-  background-color: #E2F397;
-  color: #0C2926;
+  background-color: variables.$yellow-color;
+  color: variables.$primary-color;
 }
 
 .info {
-  background-color: #DBE3D6;
-  color: #0C2926;
+  background-color: variables.$hover-gray-color;
+  color: variables.$primary-color;
 }
 
 .error {
-  background-color: #C10E0E;
+  background-color: variables.$red-color;
   color: white;
   animation: slideInRight 0.5s forwards, shake 0.5s 0.5s;
 }

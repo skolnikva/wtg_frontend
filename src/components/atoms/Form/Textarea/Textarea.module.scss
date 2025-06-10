@@ -1,8 +1,10 @@
+@use '@styles/_variables.scss' as variables;
+
 .textarea {
   padding: 10px;
-  border: 1px solid #9C9C9C;
+  border: 1px solid variables.$light-gray-color;
   border-radius: 10px;
-  background-color: #EFF7E8;
+  background-color: variables.$secondary-color;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-size: 12px;

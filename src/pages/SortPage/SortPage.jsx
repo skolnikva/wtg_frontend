@@ -88,36 +88,55 @@ const SortPage = () => {
     setLoading(prev => ({ ...prev, events: true }));
 
     try {
-      let eventsData = [];
+      let eventsByDate = [];
+      let eventsByCategory = [];
 
-      if (selectedCategories.length > 0) {
-        const requests = selectedCategories.map(categoryId =>
-          fetchAllByPagination(api.getEventsByCategory, categoryId)
-        );
-        const results = await Promise.all(requests);
-        eventsData = results.flat();
-      } else {
-        eventsData = await fetchAllByPagination(api.getAllEvents);
-      }
-      const uniqueEventsMap = new Map();
-      eventsData.forEach(event => uniqueEventsMap.set(event.id, event));
-      let uniqueEvents = Array.from(uniqueEventsMap.values());
-
+      // Получение по датам
       if (dateRange.length > 0) {
         const startDate = formatDate(dateRange[0]);
         const endDate = dateRange.length === 1 ? startDate : formatDate(dateRange[dateRange.length - 1]);
 
-        uniqueEvents = uniqueEvents.filter(event => {
-          const eventDate = event.date.split('T')[0];
-          return eventDate >= startDate && eventDate <= endDate;
-        });
+        eventsByDate = await fetchAllByPagination(api.getEventsByDateRange, startDate, endDate);
       }
 
-      setAllEvents(uniqueEvents);
-      setTotalPages(Math.ceil(uniqueEvents.length / EVENTS_PER_PAGE));
+      // Получение по категориям
+      if (selectedCategories.length > 0) {
+        const categoryRequests = selectedCategories.map(categoryId =>
+          fetchAllByPagination(api.getEventsByCategory, categoryId)
+        );
+        const categoryResults = await Promise.all(categoryRequests);
+        eventsByCategory = categoryResults.flat();
+      }
+
+      // Пересечение
+      let filteredEvents = [];
+
+      if (dateRange.length > 0 && selectedCategories.length > 0) {
+        const dateEventIds = new Set(eventsByDate.map(e => e.id));
+        filteredEvents = eventsByCategory.filter(event => dateEventIds.has(event.id));
+      } else if (dateRange.length > 0) {
+        filteredEvents = eventsByDate;
+      } else if (selectedCategories.length > 0) {
+        filteredEvents = eventsByCategory;
+      } else {
+        filteredEvents = await fetchAllByPagination(api.getAllEvents);
+      }
+
+      // Удаление дубликатов
+      const uniqueEventsMap = new Map();
+      filteredEvents.forEach(event => uniqueEventsMap.set(event.id, event));
+      const uniqueEvents = Array.from(uniqueEventsMap.values());
+
+      // Сортировка по дате
+      const sortedEvents = Array.from(uniqueEventsMap.values()).sort((a, b) => {
+        return new Date(a.closest_date) - new Date(b.closest_date);
+      });
+
+      setAllEvents(sortedEvents);
+      setTotalPages(Math.ceil(sortedEvents.length / EVENTS_PER_PAGE));
       setPage(1);
-      setHasMore(uniqueEvents.length > EVENTS_PER_PAGE);
-      setEvents(uniqueEvents.slice(0, EVENTS_PER_PAGE));
+      setHasMore(sortedEvents.length > EVENTS_PER_PAGE);
+      setEvents(sortedEvents.slice(0, EVENTS_PER_PAGE));
 
     } catch (error) {
       console.error('Ошибка загрузки событий:', error);
@@ -125,7 +144,6 @@ const SortPage = () => {
       setLoading(prev => ({ ...prev, events: false }));
     }
   };
-
 
   const handlePageChange = (newPage) => {
     if (newPage < 1 || newPage > totalPages) return;

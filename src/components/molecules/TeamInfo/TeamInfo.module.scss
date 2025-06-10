@@ -1,7 +1,9 @@
+@use '@styles/_variables.scss' as variables;
+
 .teamInfo {
   font-size: 13px;
   font-weight: 500;
-  color: #9C9C9C;
+  color: variables.$light-gray-color;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,7 +19,7 @@
     transition: color 0.3s ease;
 
     &:hover {
-      color: #0c2926;
+      color: variables.$primary-color;
     }
   }
 
@@ -26,10 +28,8 @@
     position: absolute;
     top: 0;
     width: calc(100% - 40%);
-    // left: 70px;
-    // right: 70px;
     height: 1px;
-    background-color: #9C9C9C;
+    background-color: variables.$light-gray-color;
   }
 
   @media (max-width: 768px) {

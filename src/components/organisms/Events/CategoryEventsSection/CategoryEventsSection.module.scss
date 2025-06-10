@@ -1,3 +1,5 @@
+@use '@styles/_variables.scss' as variables;
+
 .headerRow {
   display: flex;
   justify-content: space-between;
@@ -10,7 +12,7 @@
   align-items: center;
   gap: 8px;
   cursor: pointer;
-  color: #222;
+  color: variables.$primary-color;
   font-weight: 600;
   text-decoration: none;
   user-select: none;

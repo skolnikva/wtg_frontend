@@ -4,7 +4,7 @@ import Select from '@atoms/Form/Select/Select';
 import styles from './SelectField.module.scss';
 
 const SelectField = ({ label, name, value, onChange, options, ...rest }) => (
-  <div className={styles['form-group']}>
+  <div className={styles.formGroup}>
     <Label htmlFor={name}>{label}</Label>
     <Select name={name} value={value} onChange={onChange} {...rest}>
       {options.map((option) => (

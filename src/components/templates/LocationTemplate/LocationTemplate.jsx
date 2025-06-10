@@ -3,9 +3,10 @@ import Typography from '@atoms/Text/Typography/Typography';
 import EventsGrid from '@organisms/Events/EventsGrid/EventsGrid';
 import LocationMapCard from '@atoms/LocationMapCard/LocationMapCard';
 import styles from './LocationTemplate.module.scss';
+import DotsLoader  from '@molecules/DotsLoader/DotsLoader.jsx';
 
 const LocationTemplate = ({ location, events, loading, page, totalPages, onPageChange }) => {
-  if (loading) return <div>Загрузка...</div>;
+  if (loading) return <DotsLoader />;
   if (!location) return <div>Локация не найдена</div>;
 
   return (

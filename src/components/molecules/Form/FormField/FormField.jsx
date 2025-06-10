@@ -12,7 +12,7 @@ const FormField = ({ label, children, error, className, ...rest }) => {
   });
 
   return (
-    <div className={styles['form-group']}>
+    <div className={styles.formGroup}>
       {label && <Label>{label}</Label>}
       {childWithProps}
       {error && <Typography variant="error">{error}</Typography>}

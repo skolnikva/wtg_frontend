@@ -1,3 +1,5 @@
+@use '@styles/_variables.scss' as variables;
+
 .container {
   display: flex;
   width: 100%;
@@ -74,7 +76,7 @@
 
   hr {
     border: none;
-    border-top: 1px solid #DBE3D6;
+    border-top: 1px solid variables.$hover-gray-color;
     margin: 8px 0;
   }
 

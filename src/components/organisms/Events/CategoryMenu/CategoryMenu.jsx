@@ -1,51 +1,24 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import styles from './CategoryMenu.module.scss';
 import MenuButton from '@atoms/Buttons/MenuButton/MenuButton';
 import Image from '@atoms/Profile/Image/Image';
 import Tooltip from '@atoms/Tooltip/Tooltip';
+import useHorizontalScroll from '@hooks/useHorizontalScroll';
 import Sort from '@/assets/img/sort.png';
 import rightBlack from '@/assets/img/right-black.png';
 
-const SCROLL_AMOUNT = 150;
-
 const CategoryMenu = ({ items }) => {
-  const scrollRef = useRef(null);
-  const [showLeftArrow, setShowLeftArrow] = useState(false);
-  const [showRightArrow, setShowRightArrow] = useState(true);
+  const {
+    scrollRef,
+    showLeftArrow,
+    showRightArrow,
+    scrollLeft,
+    scrollRight
+  } = useHorizontalScroll();
+  
   const navigate = useNavigate();
   const location = useLocation();
-
-  const checkScrollPosition = () => {
-    if (scrollRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-      setShowLeftArrow(scrollLeft > 0);
-      setShowRightArrow(scrollLeft < scrollWidth - clientWidth - 1);
-    }
-  };
-
-  const scrollLeft = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: -SCROLL_AMOUNT, behavior: 'smooth' });
-    }
-  };
-
-  const scrollRight = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: SCROLL_AMOUNT, behavior: 'smooth' });
-    }
-  };
-
-  useEffect(() => {
-    const currentRef = scrollRef.current;
-    currentRef?.addEventListener('scroll', checkScrollPosition);
-    
-    checkScrollPosition();
-    
-    return () => {
-      currentRef?.removeEventListener('scroll', checkScrollPosition);
-    };
-  }, [items]);
 
   const handleCategoryClick = (item) => {
     navigate(`/category/${item.plural_name}/${item.id}`);
@@ -54,7 +27,6 @@ const CategoryMenu = ({ items }) => {
   const handleSortClick = () => {
     navigate('/sort', { state: { background: location } });
   };
-
 
   return (
     <div className={styles.wrapper}>

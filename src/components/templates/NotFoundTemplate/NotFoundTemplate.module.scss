@@ -1,9 +1,10 @@
+@use '@styles/_variables.scss' as variables;
+
 .container {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 100px 0;
-  // height: 90vh;
 
   @media (max-width: 768px) {
     padding: 20px 20px;
@@ -12,7 +13,6 @@
 
 .content {
   display: flex;
-  // max-width: 1200px;
   width: 100%;
   gap: 300px;
   align-items: center;
@@ -32,20 +32,20 @@
 .title {
   font-size: 92px;
   font-weight: 700;
-  color: #0C2926;
+  color: variables.$primary-color;
   margin-bottom: 20px;
 }
 
 .description {
   font-size: 15px;
-  color: #333;
+  color: variables.$primary-color;
   margin-bottom: 16px;
   line-height: 1.4;
 }
 
 .errorCode {
   font-size: 12px;
-  color: #666;
+  color: variables.$dark-gray-color;
   margin-bottom: 32px;
 }
 

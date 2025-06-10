@@ -7,6 +7,7 @@ import EventsGrid from '@organisms/Events/EventsGrid/EventsGrid';
 import Calendar from '@atoms/Calendar/Calendar';
 import NothingFoundMessage from '@molecules/Events/NothingFoundMessage/NothingFoundMessage';
 import rightBlack from '@/assets/img/right-black.png';
+import useHorizontalScroll from '@hooks/useHorizontalScroll';
 
 const SortTemplate = ({
   onClose,
@@ -15,11 +16,6 @@ const SortTemplate = ({
   categories,
   selectedCategories,
   toggleCategory,
-  scrollRef,
-  scrollLeft,
-  scrollRight,
-  showLeftArrow,
-  showRightArrow,
   loading,
   events,
   actionButtons,
@@ -27,6 +23,13 @@ const SortTemplate = ({
   totalPages,
   onPageChange,
 }) => {
+  const {
+    scrollRef,
+    showLeftArrow,
+    showRightArrow,
+    scrollLeft,
+    scrollRight
+  } = useHorizontalScroll();
   const resultsRef = useRef(null);
 
   const handlePageChange = (newPage) => {
@@ -55,7 +58,7 @@ const SortTemplate = ({
               <div className={styles.categoriesScrollContainer}>
                 <div className={styles.categoriesWrapper}>
                   {showLeftArrow && (
-                    <div className={`${styles.scrollArrow} ${styles.left}`} onClick={scrollLeft}>
+                    <div className={`${styles.arrowLeft}`} onClick={scrollLeft}>
                       <img src={rightBlack} alt="left" style={{ transform: 'rotate(180deg)' }} />
                     </div>
                   )}
@@ -75,7 +78,7 @@ const SortTemplate = ({
                   </div>
 
                   {showRightArrow && (
-                    <div className={`${styles.scrollArrow} ${styles.right}`} onClick={scrollRight}>
+                    <div className={`${styles.arrowRight}`} onClick={scrollRight}>
                       <img src={rightBlack} alt="right" />
                     </div>
                   )}

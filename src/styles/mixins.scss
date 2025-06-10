@@ -1,0 +1,70 @@
+@use './variables' as variables;
+
+@mixin scrollContainer($gap: 8px, $padding: 8px 0) {
+  display: flex;
+  gap: $gap;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: $padding;
+  
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@mixin scrollArrow($direction: 'left', $width: 40px, $imgSize: 16px) {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: $width;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  cursor: pointer;
+
+  @if $direction == 'left' {
+    left: 0;
+    justify-content: flex-start;
+    background: linear-gradient(
+      to right,
+      variables.$secondary-color 0%,
+      variables.$secondary-color 64%,
+      rgba(239, 247, 232, 0) 100%
+    );
+  } @else {
+    right: 0;
+    justify-content: flex-end;
+    background: linear-gradient(
+      to left,
+      variables.$secondary-color 0%,
+      variables.$secondary-color 64%,
+      rgba(239, 247, 232, 0) 100%
+    );
+  }
+  
+  img {
+    width: $imgSize;
+    height: $imgSize;
+  }
+}
+
+@mixin scrollWrapper {
+  position: relative;
+  overflow-x: hidden;
+}
+
+@mixin scrollOuter($width: calc(86vw - 20px)) {
+  position: relative;
+  overflow-x: hidden;
+  width: $width;
+  max-width: calc(100% - 20px);
+}
+
+@mixin arrowImage {
+  width: 15px;
+  height: 15px;
+  position: relative;
+  z-index: 2;
+}

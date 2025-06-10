@@ -1,3 +1,5 @@
+@use '@styles/_variables.scss' as variables;
+
 .modalOverlay {
   position: fixed;
   top: 0;
@@ -20,7 +22,7 @@
 }
 
 .modalContent {
-  background: #EFF7E8;
+  background: variables.$secondary-color;
   padding-top: 20px;
   border-radius: 15px;
   position: relative;

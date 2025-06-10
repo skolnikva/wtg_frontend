@@ -1,5 +1,7 @@
+@use '@styles/_variables.scss' as variables;
+
 .label {
-  color: #0c2926;
+  color: variables.$primary-color;
   font-weight: 600;
   font-size: 13px;
   display: inline-flex;
@@ -11,13 +13,13 @@
 }
 
 .label b {
-  color: #0c2926;
+  color: variables.$primary-color;
   font-weight: 400;
   font-size: 13px;
 }
 
 .description {
-  color: #0c2926;
+  color: variables.$primary-color;
   font-weight: 600;
   font-size: 13px;
 }

@@ -1,3 +1,5 @@
+@use '@styles/_variables.scss' as variables;
+
 .h1 {
   font-size: 25px;
   font-weight: bold;
@@ -25,7 +27,7 @@
   
   &.gray {
     font-weight: 500;
-    color: #9C9C9C;
+    color: variables.$light-gray-color;
   }
   
   &.bold {
@@ -43,7 +45,7 @@
 
 .body {
   font-size: 12px;
-  color: #0c2926;
+  color: variables.$secondary-color;
 }
 
 .body1 {
@@ -56,11 +58,11 @@
 
 .caption {
   font-size: 0.75rem;
-  color: #666;
+  color: variables.$dark-gray-color;
 }
 
 .error {
-  color: #C10E0E;
+  color: variables.$red-color;
   display: block;
   margin-top: 5px;
   margin-left: 12px;

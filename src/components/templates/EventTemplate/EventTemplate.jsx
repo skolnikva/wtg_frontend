@@ -10,12 +10,13 @@ import { FavoritesContext } from '@contexts/FavoritesContext';
 import { useNotification } from '@contexts/NotificationContext';
 import api from '@services/api';
 import Cookies from 'js-cookie';
+import DotsLoader  from '@molecules/DotsLoader/DotsLoader.jsx';
 
 const EventTemplate = ({ event, loading, error }) => {
   const { favorites, addToFavorites, removeFromFavorites } = useContext(FavoritesContext);
   const { showNotification } = useNotification();
 
-  if (loading) return <div>Загрузка...</div>;
+  if (loading) return <DotsLoader />;
   if (error) return <div>{error}</div>;
   if (!event) return <div>Мероприятие не найдено</div>;
 

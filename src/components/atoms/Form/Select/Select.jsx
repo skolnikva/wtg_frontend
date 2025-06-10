@@ -93,7 +93,7 @@ const SelectField = ({
   const selectedOption = options.find(opt => opt.value === value) || null;
 
   return (
-    <div className={styles['form-group']}>
+    <div className={styles['formGroup']}>
       {label && <Label>{label}</Label>}
       <Select
         options={options}

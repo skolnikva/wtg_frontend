@@ -4,6 +4,7 @@ import Typography from '@atoms/Text/Typography/Typography';
 import FullPageModalOverlay from '@templates/FullPageModalOverlay/FullPageModalOverlay';
 import SearchForm from '@molecules/SearchForm/SearchForm';
 import SearchResultList from '@organisms/SearchResultList/SearchResultList';
+import DotsLoader  from '@molecules/DotsLoader/DotsLoader.jsx';
 
 const SearchTemplate = ({
   query,
@@ -29,7 +30,7 @@ const SearchTemplate = ({
         />
       </div>
 
-      {loading && <p>Загрузка...</p>}
+      {loading && <DotsLoader />}
 
       <div className={styles.results}>
         <SearchResultList results={results} />

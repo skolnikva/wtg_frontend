@@ -1,3 +1,5 @@
+@use '@styles/_variables.scss' as variables;
+
 .list {
   list-style: none;
   padding: 0;
@@ -12,15 +14,15 @@
   font-size: 15px;
   cursor: pointer;
   transition: background-color 0.2s ease;
-  color: #0C2926;
+  color: variables.$primary-color;
 
   &:hover {
-    background-color: #DBE3D6;
+    background-color: variables.$hover-gray-color;
   }
 
   &:focus {
-    outline: 2px solid #0C2926;
-    background-color: #DBE3D6;
+    outline: 2px solid variables.$primary-color;
+    background-color: variables.$hover-gray-color;
   }
 }
 

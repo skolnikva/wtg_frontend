@@ -1,6 +1,4 @@
-.locationPage {
-
-}
+@use '@styles/_variables.scss' as variables;
 
 .locationContent {
   display: flex;
@@ -28,7 +26,7 @@
 }
 
 .address {
-  color: #666;
+  color: variables.$dark-gray-color;
 }
 
 .description {

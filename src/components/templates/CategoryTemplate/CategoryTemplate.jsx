@@ -3,6 +3,7 @@ import Typography from '@atoms/Text/Typography/Typography';
 import EventsGrid from '@organisms/Events/EventsGrid/EventsGrid';
 import NothingFoundMessage from '@molecules/Events/NothingFoundMessage/NothingFoundMessage';
 import styles from './CategoryTemplate.module.scss';
+import DotsLoader  from '@molecules/DotsLoader/DotsLoader.jsx';
 
 const CategoryTemplate = ({ title, events, loading, page, totalPages, onPageChange }) => {
   return (
@@ -12,7 +13,7 @@ const CategoryTemplate = ({ title, events, loading, page, totalPages, onPageChan
       </Typography>
 
       {loading.initial ? (
-        <div>Загрузка мероприятий...</div>
+        <DotsLoader/>
       ) : events.length > 0 ? (
         <div className={styles.results}>
           <EventsGrid
